@@ -1,5 +1,6 @@
 package Hibernete.Boostrapping.NativeBoostRaping.config;
 
+import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -14,7 +15,7 @@ public class SessionFactoryConfig {
 
     private SessionFactoryConfig(){}
 
-    public static SessionFactoryConfig getFactoryConfig(){
+    public static SessionFactoryConfig getInstance(){
 //        if(null== factoryConfig){
 //            return factoryConfig =new SessionFactoryConfig();
 //        }
@@ -28,6 +29,7 @@ public class SessionFactoryConfig {
                 .configure()
                 .build();
         Metadata metadata =  new MetadataSources(serviceRegistry)
+                .addAnnotatedClass(Customer.class)
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
                 .build();

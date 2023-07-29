@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Hibernate-ORM-Bootsrapping" uuid="e2f4edc5-d1a9-4823-94a1-01e3677a26f9">
+    <data-source source="LOCAL" name="sample_DB@localhost" uuid="177a1ff8-b0f3-44d5-a9f7-2a72f4db9301">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/hibernate-orm-bootsrapping</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/sample_DB</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
