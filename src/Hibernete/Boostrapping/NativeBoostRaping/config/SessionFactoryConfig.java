@@ -1,43 +1,36 @@
 package Hibernete.Boostrapping.NativeBoostRaping.config;
 
 import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
+import Hibernete.Boostrapping.NativeBoostRaping.entity.Item;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl;
 import org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class SessionFactoryConfig {
 
-    private static SessionFactoryConfig factoryConfig;
+    public static SessionFactoryConfig configuration;
 
     private SessionFactoryConfig(){}
 
     public static SessionFactoryConfig getInstance(){
-//        if(null== factoryConfig){
-//            return factoryConfig =new SessionFactoryConfig();
-//        }
-//        return factoryConfig;
-        return (null == factoryConfig)
-                ? factoryConfig= new SessionFactoryConfig() : factoryConfig;
+        return configuration == null ? new SessionFactoryConfig() : configuration;
     }
 
     public Session getSession(){
-        StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-                .configure()
-                .build();
-        Metadata metadata =  new MetadataSources(serviceRegistry)
-                .addAnnotatedClass(Customer.class)
-                .getMetadataBuilder()
-                .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
-                .build();
-        SessionFactory sessionFactory = metadata.buildSessionFactory();
 
+        StandardServiceRegistry builder = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+        Metadata meta = new MetadataSources(builder).addAnnotatedClass(Customer.class).addAnnotatedClass(Item.class).
+                getMetadataBuilder().
+                applyImplicitNamingStrategy(ImplicitNamingStrategyComponentPathImpl.INSTANCE).
+                build();
+
+
+        SessionFactory sessionFactory = meta.buildSessionFactory();
         return sessionFactory.openSession();
-
-
-
     }
 }
