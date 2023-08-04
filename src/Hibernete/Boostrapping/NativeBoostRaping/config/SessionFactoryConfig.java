@@ -23,7 +23,7 @@ public class SessionFactoryConfig {
 
     public Session getSession(){
 
-        StandardServiceRegistry builder = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+        StandardServiceRegistry builder = new StandardServiceRegistryBuilder().configure("Hibenete/Boostrapping/NativeBoostRaping/hibernate.Properties").build();
         Metadata meta = new MetadataSources(builder).addAnnotatedClass(Customer.class).addAnnotatedClass(Item.class).
                 getMetadataBuilder().
                 applyImplicitNamingStrategy(ImplicitNamingStrategyComponentPathImpl.INSTANCE).

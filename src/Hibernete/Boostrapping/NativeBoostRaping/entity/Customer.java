@@ -24,6 +24,7 @@ public class Customer {
     @Column(name = "customer_salary")
     private double salary;
 
+
     public int getId() {
         return id;
     }

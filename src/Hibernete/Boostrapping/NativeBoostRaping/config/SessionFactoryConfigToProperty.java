@@ -18,7 +18,7 @@ public class SessionFactoryConfigToProperty {
         Properties properties = new Properties();
 
         try {
-            properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("hibernate.Properties"));
+            properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("Hibenete/Boostrapping/NativeBoostRaping/hibernate.Properties"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
