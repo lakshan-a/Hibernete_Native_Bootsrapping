@@ -21,6 +21,7 @@ public class Appinitilazer {
         customer.setAddress("panadura");
         customer.setSalary(10000.00);
 
+        //save
 
         int savedCusId = customerRepository.saveCustomer(customer);
         System.out.println("Save Cus Id : " + savedCusId);
@@ -31,6 +32,8 @@ public class Appinitilazer {
                 .getCustomer(savedCusId);
         System.out.println(existingCustomer);
 
+//        //update
+//
 //        customerRepository =new CustomerRepository();
 //        existingCustomer.setAddress("Matara");
 //        existingCustomer.setName("Raveen");
@@ -40,6 +43,8 @@ public class Appinitilazer {
 //        }else {
 //            System.out.println("Customer Update Faild");
 //        }
+//
+//        //delete
 //
 //        customerRepository = new CustomerRepository();
 //        boolean isDeleted = customerRepository.deleteCustomer(existingCustomer);
