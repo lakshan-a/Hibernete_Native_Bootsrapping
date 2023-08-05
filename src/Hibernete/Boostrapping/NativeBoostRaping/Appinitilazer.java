@@ -14,7 +14,7 @@ public class Appinitilazer {
 
         CustomerRepository customerRepository = new CustomerRepository();
         Customer customer = new Customer();
-        customer.setId(8);
+        customer.setId(11);
         customer.setName("lakshan");
         customer.setAddress("panadura");
         customer.setSalary(10000.00);
@@ -29,7 +29,10 @@ public class Appinitilazer {
                 .getCustomer(savedCusId);
         System.out.println(existingCustomer);
 
-
+        customerRepository =new CustomerRepository();
+        existingCustomer.setAddress("Matara");
+        existingCustomer.setName("Raveen");
+        customerRepository.updateCustomer(existingCustomer);
 
         // save
 //        Session session =  SessionFactoryConfig.getInstance().getSession();
