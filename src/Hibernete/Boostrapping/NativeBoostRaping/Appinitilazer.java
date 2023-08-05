@@ -8,20 +8,22 @@ import org.hibernate.Transaction;
 
 public class Appinitilazer {
     public static void main(String[] args) {
+        // save
+        Session session =  SessionFactoryConfig.getInstance().getSession();
 
-        Session session = SessionFactoryConfig.getInstance().getSession();
         Customer customer = new Customer();
-        customer.setId(5);
-        customer.setName("Kamal");
-        customer.setAddress("Galle");
-        customer.setSalary(25000.00);
+        customer.setId(2);
+        customer.setName("kalshan");
+        customer.setAddress("galle");
+        customer.setSalary(10000.00);
 
-        //1. save krnne meken
 
         Transaction transaction = session.beginTransaction();
         session.save(customer);
         transaction.commit();
         session.close();
+
+
 
     }
 }
