@@ -31,7 +31,13 @@ public class CustomerRepository {
     }
 
     public Customer getCustomer(int id){
-        return session.get(Customer.class,id);
+        try {
+            return session.get(Customer.class,id);
+        }catch (Exception e){
+            e.printStackTrace();
+            throw e;
+        }
+
     }
 
     public boolean updateCustomer(Customer customer){
