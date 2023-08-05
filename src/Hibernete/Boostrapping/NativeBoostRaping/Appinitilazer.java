@@ -3,11 +3,23 @@ package Hibernete.Boostrapping.NativeBoostRaping;
 
 import Hibernete.Boostrapping.NativeBoostRaping.config.SessionFactoryConfig;
 import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
+import Hibernete.Boostrapping.NativeBoostRaping.repository.CustomerRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class Appinitilazer {
     public static void main(String[] args) {
+//        Customer customer = getCustomer();
+
+        CustomerRepository customerRepository = new CustomerRepository();
+        Customer customer = new Customer();
+        customer.setId(6);
+        customer.setName("lakshan");
+        customer.setAddress("panadura");
+        customer.setSalary(10000.00);
+        customerRepository.saveCustomer(customer);
+
+
         // save
 //        Session session =  SessionFactoryConfig.getInstance().getSession();
 //
@@ -49,7 +61,9 @@ public class Appinitilazer {
 //        deleteTransaction.commit();
 //        deleteSession.close();
 
+    }
 
-
+    private static Customer getCustomer() {
+        return null;
     }
 }
