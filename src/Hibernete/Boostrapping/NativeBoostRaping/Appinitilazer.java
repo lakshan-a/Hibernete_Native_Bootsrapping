@@ -14,14 +14,19 @@ public class Appinitilazer {
 
         CustomerRepository customerRepository = new CustomerRepository();
         Customer customer = new Customer();
-//        customer.setId(6);
-//        customer.setName("lakshan");
-//        customer.setAddress("panadura");
-//        customer.setSalary(10000.00);
-//        customerRepository.saveCustomer(customer);
+        customer.setId(8);
+        customer.setName("lakshan");
+        customer.setAddress("panadura");
+        customer.setSalary(10000.00);
+
+
+        int savedCusId = customerRepository.saveCustomer(customer);
+        System.out.println("Save Cus Id : " + savedCusId);
+
+        customerRepository = new CustomerRepository();
 
         Customer existingCustomer = customerRepository
-                .getCustomer(1);
+                .getCustomer(savedCusId);
         System.out.println(existingCustomer);
 
 

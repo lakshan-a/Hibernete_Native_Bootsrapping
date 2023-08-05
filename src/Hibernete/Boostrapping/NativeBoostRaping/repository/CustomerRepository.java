@@ -23,7 +23,7 @@ public class CustomerRepository {
     }
 
     public Customer getCustomer(int id){
-        return session.get(Customer.class,1);
+        return session.get(Customer.class,id);
     }
 
 }
