@@ -12,7 +12,7 @@ public class Appinitilazer {
         Session session =  SessionFactoryConfig.getInstance().getSession();
 
         Customer customer = new Customer();
-        customer.setId(2);
+        customer.setId(3);
         customer.setName("lakshan");
         customer.setAddress("panadura");
         customer.setSalary(10000.00);

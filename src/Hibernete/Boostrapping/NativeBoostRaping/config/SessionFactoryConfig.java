@@ -9,6 +9,7 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -21,31 +22,36 @@ public class SessionFactoryConfig {
 
 
     private SessionFactoryConfig(){
-        Properties properties = new Properties();
-        try {
-            properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("hibernate.Properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        Properties properties = new Properties();
+//        try {
+//            properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("hibernate.Properties"));
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-        StandardServiceRegistry serviceRegistry;
+//        StandardServiceRegistry serviceRegistry;
+//
+//        Metadata metadata= new MetadataSources(new StandardServiceRegistryBuilder()
+//                .applySettings(properties)
+//                .build())
+//                .addAnnotatedClass(Customer.class)
+//                .getMetadataBuilder()
+//                .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
+//                .build();
+//
+//       // SessionFactory sessionFactory = metadata.buildSessionFactory();
+//
+//        sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder()
+//                .configure()
+//                .build())
+//                . addAnnotatedClass(Customer.class)
+//                .getMetadataBuilder()
+//                .build().buildSessionFactory();
 
-        Metadata metadata= new MetadataSources(new StandardServiceRegistryBuilder()
-                .applySettings(properties)
-                .build())
-                .addAnnotatedClass(Customer.class)
-                .getMetadataBuilder()
-                .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
-                .build();
-
-       // SessionFactory sessionFactory = metadata.buildSessionFactory();
-
-        sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder()
+        sessionFactory =  new Configuration()
                 .configure()
-                .build())
-                . addAnnotatedClass(Customer.class)
-                .getMetadataBuilder()
-                .build().buildSessionFactory();
+                .addAnnotatedClass(Customer.class)
+                .buildSessionFactory();
 
     }
 
