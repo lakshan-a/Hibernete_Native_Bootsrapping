@@ -9,15 +9,21 @@ import org.hibernate.Transaction;
 
 public class Appinitilazer {
     public static void main(String[] args) {
+
 //        Customer customer = getCustomer();
 
         CustomerRepository customerRepository = new CustomerRepository();
         Customer customer = new Customer();
-        customer.setId(6);
-        customer.setName("lakshan");
-        customer.setAddress("panadura");
-        customer.setSalary(10000.00);
-        customerRepository.saveCustomer(customer);
+//        customer.setId(6);
+//        customer.setName("lakshan");
+//        customer.setAddress("panadura");
+//        customer.setSalary(10000.00);
+//        customerRepository.saveCustomer(customer);
+
+        Customer existingCustomer = customerRepository
+                .getCustomer(1);
+        System.out.println(existingCustomer);
+
 
 
         // save
@@ -61,9 +67,5 @@ public class Appinitilazer {
 //        deleteTransaction.commit();
 //        deleteSession.close();
 
-    }
-
-    private static Customer getCustomer() {
-        return null;
     }
 }
