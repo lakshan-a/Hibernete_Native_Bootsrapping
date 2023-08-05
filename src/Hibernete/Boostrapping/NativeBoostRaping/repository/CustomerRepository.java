@@ -43,10 +43,19 @@ public class CustomerRepository {
     public boolean updateCustomer(Customer customer){
         Transaction transaction = session.beginTransaction();
 
-        session.update(customer);
-        transaction.commit();
-        session.close();
-        return true;
+        try {
+            session.update(customer);
+            transaction.commit();
+            session.close();
+            return true;
+        }catch (Exception e){
+            transaction.rollback();
+            session.close();
+            e.printStackTrace();
+            return false;
+        }
+
+
     }
 
     public boolean deleteCustomer(Customer customer){
