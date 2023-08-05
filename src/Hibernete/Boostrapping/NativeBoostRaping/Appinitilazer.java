@@ -31,23 +31,23 @@ public class Appinitilazer {
                 .getCustomer(savedCusId);
         System.out.println(existingCustomer);
 
-        customerRepository =new CustomerRepository();
-        existingCustomer.setAddress("Matara");
-        existingCustomer.setName("Raveen");
-        boolean isupdated = customerRepository.updateCustomer(existingCustomer);
-        if (isupdated){
-            System.out.println("Customer Update");
-        }else {
-            System.out.println("Customer Update Faild");
-        }
-
-        customerRepository = new CustomerRepository();
-        boolean isDeleted = customerRepository.deleteCustomer(existingCustomer);
-        if (isDeleted){
-            System.out.println("Customer Delete");
-        }else {
-            System.out.println("Customer Delete Faild");
-        }
+//        customerRepository =new CustomerRepository();
+//        existingCustomer.setAddress("Matara");
+//        existingCustomer.setName("Raveen");
+//        boolean isupdated = customerRepository.updateCustomer(existingCustomer);
+//        if (isupdated){
+//            System.out.println("Customer Update");
+//        }else {
+//            System.out.println("Customer Update Faild");
+//        }
+//
+//        customerRepository = new CustomerRepository();
+//        boolean isDeleted = customerRepository.deleteCustomer(existingCustomer);
+//        if (isDeleted){
+//            System.out.println("Customer Delete");
+//        }else {
+//            System.out.println("Customer Delete Faild");
+//        }
 
 
 
