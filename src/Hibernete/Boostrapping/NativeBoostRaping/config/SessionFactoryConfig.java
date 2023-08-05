@@ -17,7 +17,35 @@ public class SessionFactoryConfig {
 
     private static SessionFactoryConfig factoryConfig;
 
+    SessionFactory sessionFactory;
+
+
     private SessionFactoryConfig(){
+        Properties properties = new Properties();
+        try {
+            properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("hibernate.Properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        StandardServiceRegistry serviceRegistry;
+
+        Metadata metadata= new MetadataSources(new StandardServiceRegistryBuilder()
+                .applySettings(properties)
+                .build())
+                .addAnnotatedClass(Customer.class)
+                .getMetadataBuilder()
+                .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
+                .build();
+
+       // SessionFactory sessionFactory = metadata.buildSessionFactory();
+
+        sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder()
+                .configure()
+                .build())
+                . addAnnotatedClass(Customer.class)
+                .getMetadataBuilder()
+                .build().buildSessionFactory();
 
     }
 
@@ -26,21 +54,7 @@ public class SessionFactoryConfig {
     }
 
     public Session getSession(){
-        Properties properties = new Properties();
-        try {
-            properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("hibernate.Properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-                .applySettings(properties)
-                .build();
-
-        Metadata metadata= new MetadataSources(serviceRegistry).addAnnotatedClass(Customer.class).getMetadataBuilder()
-                .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE).build();
-
-        SessionFactory sessionFactory = metadata.buildSessionFactory();
 
         return sessionFactory.openSession();
     }

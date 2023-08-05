@@ -9,19 +9,19 @@ import org.hibernate.Transaction;
 public class Appinitilazer {
     public static void main(String[] args) {
         // save
-//        Session session =  SessionFactoryConfig.getInstance().getSession();
-//
-//        Customer customer = new Customer();
-//        customer.setId(2);
-//        customer.setName("kalshan");
-//        customer.setAddress("galle");
-//        customer.setSalary(10000.00);
-//
-//
-//        Transaction transaction = session.beginTransaction();
-//        session.save(customer);
-//        transaction.commit();
-//        session.close();
+        Session session =  SessionFactoryConfig.getInstance().getSession();
+
+        Customer customer = new Customer();
+        customer.setId(2);
+        customer.setName("lakshan");
+        customer.setAddress("panadura");
+        customer.setSalary(10000.00);
+
+
+        Transaction transaction = session.beginTransaction();
+        session.save(customer);
+        transaction.commit();
+        session.close();
 
         //update
 //        Session session1 = SessionFactoryConfig.getInstance().getSession();
@@ -42,12 +42,12 @@ public class Appinitilazer {
 
         //3. delete
 
-        Session deleteSession = SessionFactoryConfig.getInstance().getSession();
-        Transaction deleteTransaction = deleteSession.beginTransaction();
-        Customer deleteCustomer = deleteSession.get(Customer.class,1);
-        deleteSession.delete(deleteCustomer);
-        deleteTransaction.commit();
-        deleteSession.close();
+//        Session deleteSession = SessionFactoryConfig.getInstance().getSession();
+//        Transaction deleteTransaction = deleteSession.beginTransaction();
+//        Customer deleteCustomer = deleteSession.get(Customer.class,1);
+//        deleteSession.delete(deleteCustomer);
+//        deleteTransaction.commit();
+//        deleteSession.close();
 
 
 
