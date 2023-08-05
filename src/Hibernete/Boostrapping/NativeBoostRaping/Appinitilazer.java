@@ -9,19 +9,19 @@ import org.hibernate.Transaction;
 public class Appinitilazer {
     public static void main(String[] args) {
         // save
-        Session session =  SessionFactoryConfig.getInstance().getSession();
-
-        Customer customer = new Customer();
-        customer.setId(3);
-        customer.setName("lakshan");
-        customer.setAddress("panadura");
-        customer.setSalary(10000.00);
-
-
-        Transaction transaction = session.beginTransaction();
-        session.save(customer);
-        transaction.commit();
-        session.close();
+//        Session session =  SessionFactoryConfig.getInstance().getSession();
+//
+//        Customer customer = new Customer();
+//        customer.setId(3);
+//        customer.setName("lakshan");
+//        customer.setAddress("panadura");
+//        customer.setSalary(10000.00);
+//
+//
+//        Transaction transaction = session.beginTransaction();
+//        session.save(customer);
+//        transaction.commit();
+//        session.close();
 
         //update
 //        Session session1 = SessionFactoryConfig.getInstance().getSession();
