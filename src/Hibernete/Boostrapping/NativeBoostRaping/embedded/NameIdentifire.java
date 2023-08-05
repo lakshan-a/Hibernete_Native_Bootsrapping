@@ -8,6 +8,10 @@ public class NameIdentifire {
 
     private String lastName;
 
+    public NameIdentifire(){
+
+    }
+
     public NameIdentifire(String firstName, String middleName, String lastName) {
         this.firstName = firstName;
         this.middleName = middleName;
