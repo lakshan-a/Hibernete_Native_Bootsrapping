@@ -7,6 +7,8 @@ import Hibernete.Boostrapping.NativeBoostRaping.repository.CustomerRepository;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.sql.SQLOutput;
+
 public class Appinitilazer {
     public static void main(String[] args) {
 
@@ -14,7 +16,7 @@ public class Appinitilazer {
 
         CustomerRepository customerRepository = new CustomerRepository();
         Customer customer = new Customer();
-        customer.setId(11);
+        customer.setId(13);
         customer.setName("lakshan");
         customer.setAddress("panadura");
         customer.setSalary(10000.00);
@@ -32,7 +34,22 @@ public class Appinitilazer {
         customerRepository =new CustomerRepository();
         existingCustomer.setAddress("Matara");
         existingCustomer.setName("Raveen");
-        customerRepository.updateCustomer(existingCustomer);
+        boolean isupdated = customerRepository.updateCustomer(existingCustomer);
+        if (isupdated){
+            System.out.println("Customer Update");
+        }else {
+            System.out.println("Customer Update Faild");
+        }
+
+        customerRepository = new CustomerRepository();
+        boolean isDeleted = customerRepository.deleteCustomer(existingCustomer);
+        if (isDeleted){
+            System.out.println("Customer Delete");
+        }else {
+            System.out.println("Customer Delete Faild");
+        }
+
+
 
         // save
 //        Session session =  SessionFactoryConfig.getInstance().getSession();
