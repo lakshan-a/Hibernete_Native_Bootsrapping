@@ -15,14 +15,9 @@
 <!--                <Image url="@assests/images/ijse-logo.gif" />-->
 <!--            </image>-->
         </ImageView>
-        <Label alignment="CENTER" layoutX="182.0" layoutY="76.0" prefHeight="19.0" prefWidth="233.0" text="Point of Sale System " textAlignment="CENTER">
-            <font>
-                <Font name="Ubuntu" size="16.0" />
-            </font>
-        </Label>
         <ImageView fx:id="imgCustomer" fitHeight="80.0" fitWidth="80.0" layoutX="57.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@resources/icons8-customer-100 (1).png" />
+                <Image url="@resources/icons8-customer-100 (2).png" />
             </image>
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -30,7 +25,7 @@
         </ImageView>
         <ImageView fx:id="imgItem" fitHeight="80.0" fitWidth="80.0" layoutX="189.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@resources/icons8-item-100 (1).png" />
+                <Image url="@resources/icons8-item-100 (2).png" />
             </image>
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -38,7 +33,7 @@
         </ImageView>
         <ImageView fx:id="imgOrder" fitHeight="80.0" fitWidth="80.0" layoutX="324.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@resources/icons8-order-100 (1).png" />
+                <Image url="@resources/icons8-order-100 (3).png" />
             </image>
             <cursor>
                 <Cursor fx:constant="HAND" />
@@ -46,14 +41,14 @@
         </ImageView>
         <ImageView fx:id="imgViewOrders" fitHeight="80.0" fitWidth="80.0" layoutX="456.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@resources/icons8-order-100 (2).png" />
+                <Image url="@resources/icons8-order-100 (4).png" />
             </image>
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </ImageView>
         <Separator layoutX="29.0" layoutY="123.0" prefHeight="0.0" prefWidth="542.0" />
-        <Label fx:id="lblMenu" alignment="CENTER" layoutX="11.0" layoutY="283.0" prefHeight="26.0" prefWidth="577.0" text="Welcome" textAlignment="CENTER" textFill="#0a39f7">
+        <Label fx:id="lblMenu" alignment="CENTER" layoutX="11.0" layoutY="283.0" prefHeight="26.0" prefWidth="577.0" text="Welcome" textAlignment="CENTER" textFill="#39eb4a">
             <font>
                 <Font name="DejaVu Sans Mono Bold" size="22.0" />
             </font>
@@ -63,5 +58,10 @@
                 <Font name="Ubuntu" size="12.0" />
             </font>
         </Label>
+      <Label layoutX="215.0" layoutY="39.0" text="Thogakade" textFill="#39eb4a">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>
