@@ -20,9 +20,12 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "customer_id", nullable = false, length = 50)
     private int id;
+
     private NameIdentifier nameIdentifier;
+
     @Column(name = "customer_address")
     private String address;
+
     @Column(name = "customer_salary")
     private double salary;
     @Transient

@@ -20,7 +20,7 @@
         <Label layoutX="40.0" layoutY="91.0" text="Item Code :" />
         <Label layoutX="40.0" layoutY="126.0" text="Item Description :" />
         <Label layoutX="40.0" layoutY="165.0" text="Unit Price :" />
-        <Label layoutX="40.0" layoutY="200.0" text="Qty.on.Handm :" />
+        <Label layoutX="40.0" layoutY="200.0" text="Qty.on.Hand :" />
         <Label layoutX="222.0" layoutY="17.0" text="Manage Items" textFill="#39eb4a">
             <font>
                 <Font name="System Bold" size="20.0" />

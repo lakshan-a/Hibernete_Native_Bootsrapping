@@ -37,9 +37,6 @@ public class HomeController {
     private Label lblDescription;
 
 
-    /**
-     * Initializes the lk.ijse.pos.controller class.
-     */
     public void initialize(URL url, ResourceBundle rb) {
         FadeTransition fadeIn = new FadeTransition(Duration.millis(2000), root);
         fadeIn.setFromValue(0.0);

@@ -2,6 +2,7 @@ package Hibernete.Boostrapping.NativeBoostRaping.config;
 
 import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
 import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
+import Hibernete.Boostrapping.NativeBoostRaping.entity.Item;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -51,6 +52,7 @@ public class SessionFactoryConfig {
         sessionFactory =  new Configuration()
                 .configure()
                 .addAnnotatedClass(Customer.class)
+                .addAnnotatedClass(Item.class)
                 .buildSessionFactory();
 
     }
