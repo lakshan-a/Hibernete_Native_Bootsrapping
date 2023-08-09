@@ -110,10 +110,10 @@ public class HomeController {
 
             switch (icon.getId()) {
                 case "imgCustomer":
-                    root = FXMLLoader.load(this.getClass().getResource("/Hibernete/Boostrapping/NativeBoostRaping/view/Home.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/Hibernete/Boostrapping/NativeBoostRaping/view/customerView.fxml"));
                     break;
                 case "imgItem":
-                    root = FXMLLoader.load(this.getClass().getResource("/lk/ijse/gdse/orm/hibernate/view/stylesstyles/manage-items-form.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/Hibernete/Boostrapping/NativeBoostRaping/view/Item.fxml"));
                     break;
                 case "imgOrder":
                     root = FXMLLoader.load(this.getClass().getResource("/lk/ijse/pos/view/place-order-form.fxml"));

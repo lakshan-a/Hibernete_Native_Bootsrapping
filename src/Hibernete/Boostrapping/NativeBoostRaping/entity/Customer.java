@@ -35,7 +35,7 @@ public class Customer {
     private List<MobileNo> phoneNos = new ArrayList<>();
 
 
-    public Customer() {}
+    public Customer(int i, String text, String adTxtText, double v) {}
 
     public Customer(int id, NameIdentifier nameIdentifier, String address, double salary, String dob, Timestamp createdDateTime, List<MobileNo> phoneNos) {
         this.id = id;
