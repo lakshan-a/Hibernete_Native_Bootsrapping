@@ -1,67 +1,119 @@
 package Hibernete.Boostrapping.NativeBoostRaping.entity;
 
 
+import Hibernete.Boostrapping.NativeBoostRaping.embedded.MobileNo;
+import Hibernete.Boostrapping.NativeBoostRaping.embedded.NameIdentifier;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GeneratorType;
+
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
-@Table(name = "Customer")
+@Table(name = "customer")
 public class Customer {
 
-
     @Id
-    @GeneratedValue (strategy = GenerationType.SEQUENCE)
-    @Column(name = "customer_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "customer_id", nullable = false, length = 50)
     private int id;
-
-    @Column(name = "csutomer_name")
-    private String name;
-
+    private NameIdentifier nameIdentifier;
     @Column(name = "customer_address")
-    private String Address;
-
+    private String address;
     @Column(name = "customer_salary")
     private double salary;
+    @Transient
+    private String dob;
+    @CreationTimestamp
+    private Timestamp createdDateTime;
+    @ElementCollection
+    @CollectionTable(name = "customer_mobile_nos",
+            joinColumns = @JoinColumn(name = "customer_id"))
+    private List<MobileNo> phoneNos = new ArrayList<>();
 
 
-    public int getId() {
+    public Customer() {}
+
+    public Customer(int id, NameIdentifier nameIdentifier, String address, double salary, String dob, Timestamp createdDateTime, List<MobileNo> phoneNos) {
+        this.id = id;
+        this.nameIdentifier = nameIdentifier;
+        this.address = address;
+        this.salary = salary;
+        this.dob = dob;
+        this.createdDateTime = createdDateTime;
+        this.phoneNos = phoneNos;
+    }
+
+    public long getId() {
         return id;
     }
+
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getAddress() {
-        return Address;
+        return address;
     }
+
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
+
 
     public double getSalary() {
         return salary;
     }
 
+
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
+    public NameIdentifier getNameIdentifier() {
+        return nameIdentifier;
+    }
+
+    public void setNameIdentifier(NameIdentifier nameIdentifier) {
+        this.nameIdentifier = nameIdentifier;
+    }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public Timestamp getCreatedDateTime() {
+        return createdDateTime;
+    }
+
+    public void setCreatedDateTime(Timestamp createdDateTime) {
+        this.createdDateTime = createdDateTime;
+    }
+
+    public List<MobileNo> getPhoneNos() {
+        return phoneNos;
+    }
+
+    public void setPhoneNos(List<MobileNo> phoneNos) {
+        this.phoneNos = phoneNos;
+    }
+
 
     @Override
     public String toString() {
         return "Customer{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", Address='" + Address + '\'' +
+                ", name='" + nameIdentifier.toString() + '\'' +
+                ", address='" + address + '\'' +
                 ", salary=" + salary +
                 '}';
     }

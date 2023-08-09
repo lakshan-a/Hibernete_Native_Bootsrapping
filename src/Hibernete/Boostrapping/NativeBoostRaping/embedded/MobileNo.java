@@ -1,17 +1,19 @@
 package Hibernete.Boostrapping.NativeBoostRaping.embedded;
 
+import javax.persistence.Embeddable;
+import java.util.List;
+
+@Embeddable
 public class MobileNo {
 
     private String type;
-    private String mobileLine;
+    private String mobileNo;
 
-    public MobileNo (){
+    public MobileNo() {}
 
-    }
-
-    public MobileNo(String type, String mobileLine) {
+    public MobileNo(String type, String mobileNo) {
         this.type = type;
-        this.mobileLine = mobileLine;
+        this.mobileNo = mobileNo;
     }
 
     public String getType() {
@@ -22,19 +24,19 @@ public class MobileNo {
         this.type = type;
     }
 
-    public String getMobileLine() {
-        return mobileLine;
+    public String getMobileNo() {
+        return mobileNo;
     }
 
-    public void setMobileLine(String mobileLine) {
-        this.mobileLine = mobileLine;
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
     }
 
     @Override
     public String toString() {
         return "MobileNo{" +
                 "type='" + type + '\'' +
-                ", mobileLine='" + mobileLine + '\'' +
+                ", mobileNo='" + mobileNo + '\'' +
                 '}';
     }
 }

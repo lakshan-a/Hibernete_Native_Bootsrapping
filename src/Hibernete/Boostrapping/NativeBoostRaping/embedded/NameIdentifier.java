@@ -1,18 +1,17 @@
 package Hibernete.Boostrapping.NativeBoostRaping.embedded;
 
-public class NameIdentifire {
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class NameIdentifier {
 
     private String firstName;
-
     private String middleName;
-
     private String lastName;
 
-    public NameIdentifire(){
+    public NameIdentifier() {}
 
-    }
-
-    public NameIdentifire(String firstName, String middleName, String lastName) {
+    public NameIdentifier(String firstName, String middleName, String lastName) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -44,7 +43,7 @@ public class NameIdentifire {
 
     @Override
     public String toString() {
-        return "NameIdentifire{" +
+        return "NameIdentifier{" +
                 "firstName='" + firstName + '\'' +
                 ", middleName='" + middleName + '\'' +
                 ", lastName='" + lastName + '\'' +
