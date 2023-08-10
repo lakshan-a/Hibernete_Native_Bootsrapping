@@ -134,4 +134,9 @@ public class HomeController {
             }
         }
     }
+
+    public void closeButton(MouseEvent mouseEvent) {
+        System.exit(0);
+
+    }
 }
