@@ -1,16 +1,14 @@
 package Hibernete.Boostrapping.NativeBoostRaping.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "item")
 public class Item {
 
     @Id
-    @Column(name = "item_code")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "item_code", nullable = false, length = 50)
     private int Code;
 
     @Column(name = "item_description")
@@ -19,12 +17,9 @@ public class Item {
     @Column(name = "item_price")
     private double Price;
 
-    @Column(name = "qty.on.hand")
+    @Column(name = "qty_on_hand")
     private int QTY;
 
-    public Item (){
-
-    }
 
     public Item(int code, String description, double price, int QTY) {
         Code = code;

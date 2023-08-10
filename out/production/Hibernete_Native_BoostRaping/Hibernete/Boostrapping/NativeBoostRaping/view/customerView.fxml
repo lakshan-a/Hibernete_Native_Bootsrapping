@@ -13,9 +13,9 @@
 
 <AnchorPane fx:id="root" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Hibernete.Boostrapping.NativeBoostRaping.controller.CustomerController">
    <children>
-      <TextField fx:id="cstId" layoutX="146.0" layoutY="94.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-border-radius: 6; -fx-background-color: white;" />
-      <TextField fx:id="cstName" layoutX="432.0" layoutY="130.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-background-color: white; -fx-border-radius: 6;" />
-      <TextField fx:id="cstAd" layoutX="146.0" layoutY="132.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-border-radius: 6; -fx-background-color: white;" />
+      <TextField fx:id="txtId" layoutX="146.0" layoutY="94.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-border-radius: 6; -fx-background-color: white;" />
+      <TextField fx:id="txtLastName" layoutX="432.0" layoutY="130.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-background-color: white; -fx-border-radius: 6;" />
+      <TextField fx:id="txtAddress" layoutX="146.0" layoutY="132.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-border-radius: 6; -fx-background-color: white;" />
       <TableView fx:id="cstTbl" layoutX="22.0" layoutY="276.0" prefHeight="200.0" prefWidth="560.0">
          <columns>
             <TableColumn fx:id="colId" prefWidth="92.0" text="Customer ID" />
@@ -34,11 +34,11 @@
       <Label layoutX="28.0" layoutY="137.0" text="Customer Address :" />
       <Label layoutX="333.0" layoutY="137.0" text="Last Name :" />
       <Label layoutX="33.0" layoutY="99.0" text="Customer Id :" />
-      <TextField fx:id="cstName1" layoutX="433.0" layoutY="91.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-background-color: white; -fx-border-radius: 6;" />
+      <TextField fx:id="txtFirstName" layoutX="433.0" layoutY="91.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-background-color: white; -fx-border-radius: 6;" />
       <Label layoutX="334.0" layoutY="95.0" text="First Name :" />
-      <TextField fx:id="cstName2" layoutX="432.0" layoutY="171.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-background-color: white; -fx-border-radius: 6;" />
+      <TextField fx:id="txtMiddleName" layoutX="432.0" layoutY="171.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-background-color: white; -fx-border-radius: 6;" />
       <Label layoutX="333.0" layoutY="178.0" text="Middle Name :" />
-      <TextField fx:id="cstAd1" layoutX="146.0" layoutY="174.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-border-radius: 6; -fx-background-color: white;" />
+      <TextField fx:id="txtSalary" layoutX="146.0" layoutY="174.0" prefHeight="27.0" prefWidth="137.0" style="-fx-border-color: #39eb4a; -fx-border-radius: 6; -fx-background-color: white;" />
       <Label layoutX="28.0" layoutY="179.0" text="Customer Salary :" />
       <Button fx:id="btnSave" layoutX="48.0" layoutY="238.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-color: #5fc944;" text="Save">
          <cursor>

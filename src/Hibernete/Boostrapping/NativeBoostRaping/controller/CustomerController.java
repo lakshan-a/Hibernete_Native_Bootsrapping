@@ -1,5 +1,7 @@
 package Hibernete.Boostrapping.NativeBoostRaping.controller;
 
+import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
+import Hibernete.Boostrapping.NativeBoostRaping.repository.CustomerRepository;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +15,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import sun.security.krb5.Config;
+import sun.security.krb5.KrbException;
 
 import java.io.IOException;
 import java.net.URL;
@@ -50,22 +56,23 @@ public class CustomerController {
     private TableColumn<?, ?> colSalary;
 
     @FXML
-    private TextField cstAd;
+    private TextField txtAddress;
 
     @FXML
-    private TextField cstAd1;
+    private TextField txtFirstName;
 
     @FXML
-    private TextField cstId;
+    private TextField txtId;
 
     @FXML
-    private TextField cstName;
+    private TextField txtLastName;
 
     @FXML
-    private TextField cstName1;
+    private TextField txtMiddleName;
 
     @FXML
-    private TextField cstName2;
+    private TextField txtSalary;
+
 
     @FXML
     private TableView<?> cstTbl;
@@ -74,12 +81,12 @@ public class CustomerController {
     private AnchorPane root;
 
     @FXML
-    void btnDeleteOnAction(ActionEvent event) {
+    void btnDeleteOnAction(ActionEvent event) throws KrbException {
 
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) {
+    void btnSaveOnAction(ActionEvent event) throws KrbException {
 
     }
 

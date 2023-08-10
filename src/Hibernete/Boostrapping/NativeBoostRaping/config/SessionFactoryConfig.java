@@ -17,39 +17,20 @@ import java.util.Properties;
 
 public class SessionFactoryConfig {
 
+    private static SessionFactory sessionFactory;
+
     private static SessionFactoryConfig factoryConfig;
 
-    SessionFactory sessionFactory;
+    /**
+     * Defines default constructor as private
+     * to avoid object creation of this class from outside
+     */
+    private SessionFactoryConfig() {
 
+    }
 
-    private SessionFactoryConfig(){
-//        Properties properties = new Properties();
-//        try {
-//            properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("hibernate.Properties"));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-//        StandardServiceRegistry serviceRegistry;
-//
-//        Metadata metadata= new MetadataSources(new StandardServiceRegistryBuilder()
-//                .applySettings(properties)
-//                .build())
-//                .addAnnotatedClass(Customer.class)
-//                .getMetadataBuilder()
-//                .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)
-//                .build();
-//
-//       // SessionFactory sessionFactory = metadata.buildSessionFactory();
-//
-//        sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder()
-//                .configure()
-//                .build())
-//                . addAnnotatedClass(Customer.class)
-//                .getMetadataBuilder()
-//                .build().buildSessionFactory();
-
-        sessionFactory =  new Configuration()
+    static {
+        sessionFactory = new Configuration()
                 .configure()
                 .addAnnotatedClass(Customer.class)
                 .addAnnotatedClass(Item.class)
@@ -57,13 +38,22 @@ public class SessionFactoryConfig {
 
     }
 
-    public static SessionFactoryConfig getInstance(){
-        return (null==factoryConfig) ? factoryConfig=new SessionFactoryConfig() : factoryConfig;
+    /**
+     * @return lk.ijse.gdse.orm.hibernate.config.SessionFactoryConfig
+     * Singleton the class to avoid object re-creation
+     */
+    public static SessionFactoryConfig getInstance() {
+        return (null == factoryConfig)
+                ? factoryConfig = new SessionFactoryConfig()
+                : factoryConfig;
     }
 
-    public Session getSession(){
-
-
+    /**
+     * @return org.hibernate.Session
+     * Returns Hibernate session whenever this method is called
+     * by following the steps of Native Bootstrapping
+     */
+    public Session getSession() {
         return sessionFactory.openSession();
     }
 }
