@@ -1,5 +1,10 @@
 package Hibernete.Boostrapping.NativeBoostRaping.controller;
 
+import Hibernete.Boostrapping.NativeBoostRaping.config.SessionFactoryConfig;
+import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
+import Hibernete.Boostrapping.NativeBoostRaping.entity.Item;
+import Hibernete.Boostrapping.NativeBoostRaping.repository.CustomerRepository;
+import Hibernete.Boostrapping.NativeBoostRaping.repository.ItemRepository;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +19,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.io.IOException;
 import java.net.URL;
@@ -67,16 +74,31 @@ public class ItemController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        Session session= SessionFactoryConfig.getInstance().getSession();
+        Transaction trans = session.beginTransaction();
+
+        String id = (txtItemCode.getText());
+        Item item = session.get(Item.class,id);
 
     }
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+//        Item item = new Item(txtItemCode.getText(),txtItemDes.getText(),txtQty.getText(),txtItemUnit.getText());
+//        ItemRepository itemRepository = new ItemRepository();
+//        String savedItemCode = itemRepository.saveItem(item);
+//        System.out.println("Saved Item Id: " + savedItemCode);
 
     }
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
+        ItemRepository itemRepository = new ItemRepository();
+
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Customer item = itemRepository.getItem(txtItemCode.getText());
 
     }
 

@@ -17,43 +17,38 @@ import java.util.Properties;
 
 public class SessionFactoryConfig {
 
-    private static SessionFactory sessionFactory;
+    private static SessionFactory factory;
+    private static SessionFactoryConfig configToProperty;
 
-    private static SessionFactoryConfig factoryConfig;
+    private SessionFactoryConfig(){
+        Configuration configuration = new Configuration();
+        Properties properties = new Properties();
 
-    /**
-     * Defines default constructor as private
-     * to avoid object creation of this class from outside
-     */
-    private SessionFactoryConfig() {
+        try {
+            properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("hibernate.Properties"));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
+        configuration.addAnnotatedClass(Customer.class).addAnnotatedClass(Item.class);
+        factory=configuration.setProperties(properties).buildSessionFactory();
     }
 
-    static {
-        sessionFactory = new Configuration()
-                .configure()
-                .addAnnotatedClass(Customer.class)
-                .addAnnotatedClass(Item.class)
-                .buildSessionFactory();
-
+    public static SessionFactoryConfig getInstance(){
+        return configToProperty == null ? new SessionFactoryConfig() : configToProperty;
     }
 
-    /**
-     * @return lk.ijse.gdse.orm.hibernate.config.SessionFactoryConfig
-     * Singleton the class to avoid object re-creation
-     */
-    public static SessionFactoryConfig getInstance() {
-        return (null == factoryConfig)
-                ? factoryConfig = new SessionFactoryConfig()
-                : factoryConfig;
-    }
-
-    /**
-     * @return org.hibernate.Session
-     * Returns Hibernate session whenever this method is called
-     * by following the steps of Native Bootstrapping
-     */
     public Session getSession() {
-        return sessionFactory.openSession();
+       /* Properties properties = null;
+        if (properties == null) {
+            properties = new Properties();
+            try {
+                properties.load(Customer.class
+                        .getResourceAsStream("hibernate.Properties"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }*/
+        return factory.openSession();
     }
 }

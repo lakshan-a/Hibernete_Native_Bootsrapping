@@ -5,68 +5,67 @@ import javax.persistence.*;
 @Entity
 @Table(name = "item")
 public class Item {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "item_code", nullable = false, length = 50)
-    private int Code;
+    @Column(name = "ItemCode")
+    private String itemCode;
+    @Column(name = "Description")
+    private String description;
+    @Column(name = "Price")
+    private double price;
+    @Column(name = "Qty")
+    private int qty;
 
-    @Column(name = "item_description")
-    private String Description;
-
-    @Column(name = "item_price")
-    private double Price;
-
-    @Column(name = "qty_on_hand")
-    private int QTY;
-
-
-    public Item(int code, String description, double price, int QTY) {
-        Code = code;
-        Description = description;
-        Price = price;
-        this.QTY = QTY;
+    public Item() {
     }
 
-    public int getCode() {
-        return Code;
+    public Item(String itemCode, String description, double price, int qty) {
+
+        this.itemCode = itemCode;
+        this.description = description;
+        this.price = price;
+        this.qty = qty;
     }
 
-    public void setCode(int code) {
-        Code = code;
+
+    public String getItemCode() {
+        return itemCode;
     }
 
     public String getDescription() {
-        return Description;
-    }
-
-    public void setDescription(String description) {
-        Description = description;
+        return description;
     }
 
     public double getPrice() {
-        return Price;
+        return price;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setItemCode(String itemCode) {
+        this.itemCode = itemCode;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setPrice(double price) {
-        Price = price;
+        this.price = price;
     }
 
-    public int getQTY() {
-        return QTY;
-    }
-
-    public void setQTY(int QTY) {
-        this.QTY = QTY;
+    public void setQty(int qty) {
+        this.qty = qty;
     }
 
     @Override
     public String toString() {
         return "Item{" +
-                "Code=" + Code +
-                ", Description='" + Description + '\'' +
-                ", Price=" + Price +
-                ", QTY=" + QTY +
+                "itemCode='" + itemCode + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", qty=" + qty +
                 '}';
     }
 }
