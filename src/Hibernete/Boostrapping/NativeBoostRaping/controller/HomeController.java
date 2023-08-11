@@ -32,6 +32,8 @@ public class HomeController {
     @FXML
     private ImageView imgViewOrders;
     @FXML
+    private ImageView imgViewClose;
+    @FXML
     private Label lblMenu;
     @FXML
     private Label lblDescription;

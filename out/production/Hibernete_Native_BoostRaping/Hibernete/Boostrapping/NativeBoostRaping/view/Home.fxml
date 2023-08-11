@@ -63,7 +63,7 @@
             <Font name="System Bold Italic" size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgViewOrders1" fitHeight="45.0" fitWidth="43.0" layoutX="549.0" layoutY="1.0" onMouseClicked="#closeButton" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgViewClose" fitHeight="45.0" fitWidth="43.0" layoutX="549.0" layoutY="6.0" onMouseClicked="#closeButton" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@resources/icons8-close-96.png" />
          </image>

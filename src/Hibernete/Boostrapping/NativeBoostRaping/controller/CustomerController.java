@@ -1,7 +1,5 @@
 package Hibernete.Boostrapping.NativeBoostRaping.controller;
 
-import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
-import Hibernete.Boostrapping.NativeBoostRaping.repository.CustomerRepository;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,13 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import sun.security.krb5.Config;
-import sun.security.krb5.KrbException;
 
 import java.io.IOException;
 import java.net.URL;
@@ -41,52 +36,48 @@ public class CustomerController {
     private TableColumn<?, ?> colAd;
 
     @FXML
-    private TableColumn<?, ?> colFirstName;
-
-    @FXML
     private TableColumn<?, ?> colId;
 
     @FXML
-    private TableColumn<?, ?> colLastName;
+    private TableColumn<?, ?> colName;
 
     @FXML
-    private TableColumn<?, ?> colMiddleName;
+    private TextField cstAd;
 
     @FXML
-    private TableColumn<?, ?> colSalary;
+    private TextField cstId;
 
     @FXML
-    private TextField txtAddress;
-
-    @FXML
-    private TextField txtFirstName;
-
-    @FXML
-    private TextField txtId;
-
-    @FXML
-    private TextField txtLastName;
-
-    @FXML
-    private TextField txtMiddleName;
-
-    @FXML
-    private TextField txtSalary;
-
+    private TextField cstName;
 
     @FXML
     private TableView<?> cstTbl;
 
     @FXML
+    private ImageView imgBack;
+
+    @FXML
     private AnchorPane root;
 
     @FXML
-    void btnDeleteOnAction(ActionEvent event) throws KrbException {
+    void btnBack(MouseEvent event) throws IOException {
+        URL resource = this.getClass().getResource("/Hibernete/Boostrapping/NativeBoostRaping/view/Home.fxml");
+        Parent root = FXMLLoader.load(resource);
+        Scene scene = new Scene(root);
+        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
+        primaryStage.setScene(scene);
+        primaryStage.centerOnScreen();
+        Platform.runLater(() -> primaryStage.sizeToScene());
 
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) throws KrbException {
+    void btnDeleteOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btnSaveOnAction(ActionEvent event) {
 
     }
 
@@ -100,13 +91,4 @@ public class CustomerController {
 
     }
 
-    public void btnBack(MouseEvent mouseEvent) throws IOException {
-        URL resource = this.getClass().getResource("/Hibernete/Boostrapping/NativeBoostRaping/view/Home.fxml");
-        Parent root = FXMLLoader.load(resource);
-        Scene scene = new Scene(root);
-        Stage primaryStage = (Stage) (this.root.getScene().getWindow());
-        primaryStage.setScene(scene);
-        primaryStage.centerOnScreen();
-        Platform.runLater(() -> primaryStage.sizeToScene());
-    }
 }
