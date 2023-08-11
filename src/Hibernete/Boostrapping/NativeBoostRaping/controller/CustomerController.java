@@ -1,5 +1,8 @@
 package Hibernete.Boostrapping.NativeBoostRaping.controller;
 
+import Hibernete.Boostrapping.NativeBoostRaping.config.SessionFactoryConfig;
+import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
+import Hibernete.Boostrapping.NativeBoostRaping.repository.CustomerRepository;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +17,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.io.IOException;
 import java.net.URL;
@@ -73,16 +78,31 @@ public class CustomerController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        Session session= SessionFactoryConfig.getInstance().getSession();
+        Transaction trans = session.beginTransaction();
+
+        String id = (cstId.getText());
+        Customer customer = session.get(Customer.class,id);
 
     }
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
+        Customer customer = new Customer(cstId.getText(),cstName.getText(),cstAd.getText());
+        CustomerRepository cusRepository = new CustomerRepository();
+        String savedCusId = cusRepository.saveCustomer(customer);
+        System.out.println("Saved Cus Id: " + savedCusId);
 
     }
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
+        CustomerRepository customerRepository = new CustomerRepository();
+
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Customer customer = customerRepository.getCustomer(cstId.getText());
 
     }
 

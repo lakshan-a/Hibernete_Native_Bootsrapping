@@ -1,10 +1,10 @@
 package Hibernete.Boostrapping.NativeBoostRaping;
 
 
-import Hibernete.Boostrapping.NativeBoostRaping.embedded.MobileNo;
-import Hibernete.Boostrapping.NativeBoostRaping.embedded.NameIdentifier;
-import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
-import Hibernete.Boostrapping.NativeBoostRaping.repository.CustomerRepository;
+//import Hibernete.Boostrapping.NativeBoostRaping.embedded.MobileNo;
+//import Hibernete.Boostrapping.NativeBoostRaping.embedded.NameIdentifier;
+//import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
+//import Hibernete.Boostrapping.NativeBoostRaping.repository.CustomerRepository;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
