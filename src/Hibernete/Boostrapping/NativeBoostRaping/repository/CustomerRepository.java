@@ -5,8 +5,13 @@ import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-public class CustomerRepository {
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import java.util.List;
 
+public class CustomerRepository {
     private Session session;
     public CustomerRepository(){
         session = SessionFactoryConfig
@@ -67,4 +72,16 @@ public class CustomerRepository {
         }
     }
 
-}
+    public List<Customer> getAll() {
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<Customer> cq = cb.createQuery(Customer.class);
+        Root<Customer> rootEntry = cq.from(Customer.class);
+        CriteriaQuery<Customer> all = cq.select(rootEntry);
+
+        TypedQuery<Customer> allQuery = session.createQuery(all);
+        return allQuery.getResultList();
+    }
+
+
+
+    }

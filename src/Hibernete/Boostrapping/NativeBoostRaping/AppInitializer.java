@@ -5,11 +5,14 @@ package Hibernete.Boostrapping.NativeBoostRaping;
 //import Hibernete.Boostrapping.NativeBoostRaping.embedded.NameIdentifier;
 //import Hibernete.Boostrapping.NativeBoostRaping.entity.Customer;
 //import Hibernete.Boostrapping.NativeBoostRaping.repository.CustomerRepository;
+import Hibernete.Boostrapping.NativeBoostRaping.config.Config;
+import Hibernete.Boostrapping.NativeBoostRaping.config.SessionFactoryConfig;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.hibernate.Session;
 
 import javax.transaction.Transaction;
 import java.io.IOException;
@@ -31,6 +34,7 @@ public class AppInitializer extends Application  {
         primaryStage.setTitle("Java FX POS");
         primaryStage.centerOnScreen();
         primaryStage.show();
+        Session session = SessionFactoryConfig.getInstance().getSession();
     }
 }
 

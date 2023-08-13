@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "item")
 public class Item {
     @Id
-    @Column(name = "ItemCode")
+    @Column(name = "ItemCode" ,length = 30)
     private String itemCode;
     @Column(name = "Description")
     private String description;

@@ -15,7 +15,7 @@
 <!--                <Image url="@assests/images/ijse-logo.gif" />-->
 <!--            </image>-->
         </ImageView>
-        <ImageView fx:id="imgCustomer" fitHeight="80.0" fitWidth="80.0" layoutX="57.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imgCustomer" fitHeight="80.0" fitWidth="80.0" layoutX="126.0" layoutY="160.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@resources/icons8-customer-100 (2).png" />
             </image>
@@ -23,7 +23,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </ImageView>
-        <ImageView fx:id="imgItem" fitHeight="80.0" fitWidth="80.0" layoutX="189.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imgItem" fitHeight="80.0" fitWidth="80.0" layoutX="258.0" layoutY="160.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@resources/icons8-item-100 (2).png" />
             </image>
@@ -31,17 +31,9 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </ImageView>
-        <ImageView fx:id="imgOrder" fitHeight="80.0" fitWidth="80.0" layoutX="324.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="imgOrder" fitHeight="80.0" fitWidth="80.0" layoutX="393.0" layoutY="160.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@resources/icons8-order-100 (3).png" />
-            </image>
-            <cursor>
-                <Cursor fx:constant="HAND" />
-            </cursor>
-        </ImageView>
-        <ImageView fx:id="imgViewOrders" fitHeight="80.0" fitWidth="80.0" layoutX="456.0" layoutY="165.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@resources/icons8-order-100 (4).png" />
             </image>
             <cursor>
                 <Cursor fx:constant="HAND" />

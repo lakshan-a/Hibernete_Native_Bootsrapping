@@ -84,10 +84,10 @@ public class ItemController {
 
     @FXML
     void btnSaveOnAction(ActionEvent event) {
-//        Item item = new Item(txtItemCode.getText(),txtItemDes.getText(),txtQty.getText(),txtItemUnit.getText());
-//        ItemRepository itemRepository = new ItemRepository();
-//        String savedItemCode = itemRepository.saveItem(item);
-//        System.out.println("Saved Item Id: " + savedItemCode);
+        Item item = new Item(txtItemCode.getText(),txtItemDes.getText(),Integer.parseInt(txtItemUnit.getText()),Integer.parseInt(txtQty.getText()));
+        ItemRepository itemRepository = new ItemRepository();
+        String savedItemCode = itemRepository.saveItem(item);
+        System.out.println("Saved Item Id: " + savedItemCode);
 
     }
 
@@ -104,6 +104,19 @@ public class ItemController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Item iteam = session.get(Item.class, Integer.parseInt(txtItemCode.getText()));
+
+        iteam.setDescription(txtItemDes.getText());
+        iteam.setItemCode(txtItemCode.getText());
+        iteam.setPrice(Double.parseDouble(txtItemUnit.getText()));
+        iteam.setQty(Integer.parseInt(txtQty.getText()));
+
+        session.update(iteam);
+        transaction.commit();
+        session.close();
 
     }
 

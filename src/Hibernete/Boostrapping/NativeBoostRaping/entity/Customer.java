@@ -10,15 +10,12 @@ import javax.persistence.Table;
 @Table(name = "Customer")
 public class Customer {
     @Id
-    @Column(name = "customer_id",length = 255)
+    @Column(name = "customer_id",length = 30)
     private String id;
     @Column(name = "customer_name")
     private String name;
     @Column(name = "customer_address")
     private String address;
-
-    public Customer() {
-    }
 
     public String getId() {return id;}
 
